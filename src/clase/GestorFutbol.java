@@ -7,7 +7,7 @@ import java.util.logging.Logger;
 public class GestorFutbol {
 	
 	  // Atributos del equipo
-    private static String equipoNombre;       // Nombre del equipo
+    private  String equipoNombre;       // Nombre del equipo
     private static int puntos;                // Puntos acumulados por el equipo
 
     // Se crea el logger
@@ -34,9 +34,14 @@ public class GestorFutbol {
 
         // Se crea otro equipo para comparar con el principal
         GestorFutbol otroEquipo = new GestorFutbol("Real Madrid");
-
+        
+        
         // Comparación entre dos equipos (por nombre)
-        logger.info("Comparación entre equipos: " + equipoPrincipal.compareTo(otroEquipo));
+        
+        
+            logger.info("Comparación entre equipos: " + equipoPrincipal.compareTo(otroEquipo));
+        
+      
     }
 
     // Constructor que inicializa el equipo con su nombre y puntos en 0
@@ -136,11 +141,8 @@ public class GestorFutbol {
 
     // Compara dos objetos GestorFutbol por su nombre de equipo
     	
-    public int compareTo(GestorFutbol otro) {
-        if (equipoNombre == null || otro.equipoNombre == null) {
-            return -1;
-        }
-        return equipoNombre.compareTo(otro.equipoNombre);
+    public boolean compareTo(GestorFutbol otro) {
+        return equipoNombre != null && otro.equipoNombre != null;
     }
 
 }
